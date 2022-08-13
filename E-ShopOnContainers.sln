@@ -11,6 +11,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{61
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeekShopping.ProductAPI", "Services\GeekShopping.ProductAPI\GeekShopping.ProductAPI.csproj", "{D6416D0A-C03F-46CA-9878-A02D3C4297D1}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FrontTestXunit", "FrontEnd\FrontTestXunit\FrontTestXunit.csproj", "{1231FB2C-5FE7-4B37-A0B2-241D6AA31832}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -48,9 +50,22 @@ Global
 		{D6416D0A-C03F-46CA-9878-A02D3C4297D1}.Release|x64.Build.0 = Release|Any CPU
 		{D6416D0A-C03F-46CA-9878-A02D3C4297D1}.Release|x86.ActiveCfg = Release|Any CPU
 		{D6416D0A-C03F-46CA-9878-A02D3C4297D1}.Release|x86.Build.0 = Release|Any CPU
+		{1231FB2C-5FE7-4B37-A0B2-241D6AA31832}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1231FB2C-5FE7-4B37-A0B2-241D6AA31832}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1231FB2C-5FE7-4B37-A0B2-241D6AA31832}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{1231FB2C-5FE7-4B37-A0B2-241D6AA31832}.Debug|x64.Build.0 = Debug|Any CPU
+		{1231FB2C-5FE7-4B37-A0B2-241D6AA31832}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{1231FB2C-5FE7-4B37-A0B2-241D6AA31832}.Debug|x86.Build.0 = Debug|Any CPU
+		{1231FB2C-5FE7-4B37-A0B2-241D6AA31832}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1231FB2C-5FE7-4B37-A0B2-241D6AA31832}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1231FB2C-5FE7-4B37-A0B2-241D6AA31832}.Release|x64.ActiveCfg = Release|Any CPU
+		{1231FB2C-5FE7-4B37-A0B2-241D6AA31832}.Release|x64.Build.0 = Release|Any CPU
+		{1231FB2C-5FE7-4B37-A0B2-241D6AA31832}.Release|x86.ActiveCfg = Release|Any CPU
+		{1231FB2C-5FE7-4B37-A0B2-241D6AA31832}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{21037A84-F296-44F4-93B0-7C1355EF7CD4} = {46C39589-96F1-4BA7-85B7-619A482543F1}
 		{D6416D0A-C03F-46CA-9878-A02D3C4297D1} = {61D323F3-BD24-4CAA-BEAA-2E5F2782540C}
+		{1231FB2C-5FE7-4B37-A0B2-241D6AA31832} = {46C39589-96F1-4BA7-85B7-619A482543F1}
 	EndGlobalSection
 EndGlobal
