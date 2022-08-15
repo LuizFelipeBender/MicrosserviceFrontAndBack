@@ -1,13 +1,9 @@
 using System;
 using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
 using System.Threading.Tasks;
 using GeekShopping.ProductAPI.Repository;
 using GeekShopping.ProductAPI.ValueObjects;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.ModelBinding;
-using Microsoft.Extensions.Logging;
 
 namespace GeekShopping.ProductAPI.Controllers
 {
@@ -23,7 +19,7 @@ namespace GeekShopping.ProductAPI.Controllers
             ArgumentNullException(nameof(repository));
         }
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<ProductVO>>> GetFindAll()
+        public async Task<ActionResult<IEnumerable<ProductVO>>> GetFindAllAsync()
         {
             var product = await _repository.FindAllProductsAsync();
             return Ok(product);
@@ -39,7 +35,7 @@ namespace GeekShopping.ProductAPI.Controllers
         }
 
         [HttpPost]
-        public async Task<ActionResult<ProductVO>> Create([FromQuery] ProductVO vo)
+        public async Task<ActionResult<ProductVO>> CreateAsync([FromQuery] ProductVO vo)
         {
             if (vo == null) return BadRequest();
             var product = await _repository.CreateAsync(vo);
@@ -47,7 +43,7 @@ namespace GeekShopping.ProductAPI.Controllers
         }
 
         [HttpPut]
-        public async Task<ActionResult> Update([FromQuery] ProductVO vo)
+        public async Task<ActionResult> UpdateAsync([FromQuery] ProductVO vo)
         {
             if (vo == null) return BadRequest();
             var product = await _repository.UpdateAsync(vo);
