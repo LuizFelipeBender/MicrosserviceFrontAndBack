@@ -11,7 +11,7 @@ namespace GeekShopping.ProductAPI.Migrations
                 .Annotation("MySql:CharSet", "utf8mb4");
 
             migrationBuilder.CreateTable(
-                name: "productEntities",
+                name: "ProductEntities",
                 columns: table => new
                 {
                     id = table.Column<ulong>(type: "bigint unsigned", nullable: false)
@@ -19,16 +19,16 @@ namespace GeekShopping.ProductAPI.Migrations
                     Product = table.Column<string>(type: "varchar(100)", maxLength: 100, nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     Price = table.Column<decimal>(type: "decimal(65,30)", nullable: false),
-                    Description = table.Column<string>(type: "longtext", nullable: true)
+                    Description = table.Column<string>(type: "varchar(200)", maxLength: 200, nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4"),
-                    Category_Name = table.Column<string>(type: "varchar(50)", maxLength: 50, nullable: true)
+                    Category_Name = table.Column<string>(type: "varchar(50)", maxLength: 50, nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4"),
-                    Url_image = table.Column<string>(type: "varchar(150)", maxLength: 150, nullable: true)
+                    Image_Url = table.Column<string>(type: "varchar(250)", maxLength: 250, nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4")
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_productEntities", x => x.id);
+                    table.PrimaryKey("PK_ProductEntities", x => x.id);
                 })
                 .Annotation("MySql:CharSet", "utf8mb4");
         }
@@ -36,7 +36,7 @@ namespace GeekShopping.ProductAPI.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "productEntities");
+                name: "ProductEntities");
         }
     }
 }

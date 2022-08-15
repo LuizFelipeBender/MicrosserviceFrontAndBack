@@ -24,12 +24,15 @@ namespace GeekShopping.ProductAPI.Migrations
                         .HasColumnName("id");
 
                     b.Property<string>("CategoryName")
+                        .IsRequired()
                         .HasMaxLength(50)
                         .HasColumnType("varchar(50)")
                         .HasColumnName("Category_Name");
 
                     b.Property<string>("Description")
-                        .HasColumnType("longtext")
+                        .IsRequired()
+                        .HasMaxLength(200)
+                        .HasColumnType("varchar(200)")
                         .HasColumnName("Description");
 
                     b.Property<string>("Product_Name")
@@ -43,13 +46,14 @@ namespace GeekShopping.ProductAPI.Migrations
                         .HasColumnName("Price");
 
                     b.Property<string>("UrlImage")
-                        .HasMaxLength(150)
-                        .HasColumnType("varchar(150)")
-                        .HasColumnName("Url_image");
+                        .IsRequired()
+                        .HasMaxLength(250)
+                        .HasColumnType("varchar(250)")
+                        .HasColumnName("Image_Url");
 
                     b.HasKey("Id");
 
-                    b.ToTable("productEntities");
+                    b.ToTable("ProductEntities");
                 });
 #pragma warning restore 612, 618
         }

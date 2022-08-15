@@ -6,6 +6,10 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
 using GeekShopping.ProductAPI.Data;
 using Microsoft.EntityFrameworkCore;
+using AutoMapper;
+using GeekShopping.ProductAPI.Config;
+using System;
+using GeekShopping.ProductAPI.Repository;
 
 namespace GeekShopping.ProductAPI
 {
@@ -25,6 +29,12 @@ namespace GeekShopping.ProductAPI
             string connectionString = Configuration.GetConnectionString("DefaultConnection");
             services.AddDbContext<MysqlContext>(options => options.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString)));
             services.AddControllers();
+            
+            // RegisterMaps for AutoMapper
+            IMapper mapper = MappingConfig.RegisterMaps().CreateMapper();
+            services.AddSingleton(mapper);
+            services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+            services.AddScoped<IProductRepository,ProductRepository>();
             services.AddSwaggerGen(c =>
 {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "apiagenda", Version = "v1" });
