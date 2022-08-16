@@ -15,7 +15,7 @@ namespace GeekShopping.Web.Services.IServices
         Task<ProductModel> CreateProductAsync(ProductModel model);
         Task<ProductModel> UpdateProductAsync(ProductModel model);
 
-        Task<ProductModel> DeleteByIdProductAsync(ulong Id);
+        Task<bool> DeleteByIdProductAsync(ulong Id);
 
     }
 }
